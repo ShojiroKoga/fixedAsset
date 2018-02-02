@@ -1,0 +1,35 @@
+<% if logged_in? %>
+
+  <div id="new-blog-link">
+    <%= link_to '新規ブログを作成する', new_blog_path %>
+  </div>
+  
+  <div class="container">
+
+
+
+    <div class="row">
+      <% @blogs.each do |blog| %>
+        <div class="col-xs-50 col-md-6 blog-panel">
+          <h2><%= blog.title %></h2>
+          <p><%= blog.content %></p>
+          <p><%= image_tag blog.image %></p>  
+          
+          <p><%= blog.created_at %></p>
+
+          <div class="blog-links">
+            <%= link_to 'Show', blog, class: 'btn btn-default' %>
+            
+            <% if blog.user_id == current_user.id %>
+              <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
+              <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<% else %>
+    <h2>session error, please login</h2>  
+<% end %>
