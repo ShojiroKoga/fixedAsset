@@ -19,5 +19,5 @@ WickedPdf.config = {
   # (but can be overridden in `render :pdf` calls)
   # layout: 'pdf.html',
   
-   :exe_path => '/usr/local/rvm/gems/ruby-2.4.0/bin/wkhtmltopdf'
+   exe_path: "#{Gem.loaded_specs['wkhtmltopdf-binary'].full_gem_path}/bin/wkhtmltopdf"
 }
