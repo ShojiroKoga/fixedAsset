@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  create_date: MyString
+  asset_number: 1
+  case_name: MyString
+  acquisition_date: MyString
+  modeltype_name: MyString
+  serial_number: MyString
+  place_summary: MyString
+  place_detail: MyString
+  etc_content: MyText
+
+two:
+  create_date: MyString
+  asset_number: 1
+  case_name: MyString
+  acquisition_date: MyString
+  modeltype_name: MyString
+  serial_number: MyString
+  place_summary: MyString
+  place_detail: MyString
+  etc_content: MyText

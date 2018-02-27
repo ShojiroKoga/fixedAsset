@@ -3,17 +3,3 @@
 <p>メールアドレス: <%= @user.email %></p>
 <p><%= image_tag @user.image %></p>  
           
-<h1><%= @user.name %>のお気に入り</h1>
-
-  <div class="container">
-
-    <div class="row">
-      <% @user.favorite_blogs.each do |user| %>
-        <div class="col-xs-12 col-md-6 blog-panel">
-          <h2><%= user.title %></h2>
-          <p><%= user.content %></p>
-          <p><%= user.created_at %></p>
-        </div>
-      <% end %>
-    </div>
-  </div>

@@ -1,0 +1,69 @@
+<% if logged_in? %>
+
+<%= form_with(model: fixedasset, local: true) do |form| %>
+  <% if fixedasset.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fixedasset.errors.count, "error") %> prohibited this fixedasset from being saved:</h2>
+
+      <ul>
+      <% fixedasset.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :作成日%>
+    <%= form.text_field :create_date, id: :fixedasset_create_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :固定資産番号%>
+    <%= form.text_field  :asset_number, id: :fixedasset_asset_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :名称%>
+    <%= form.text_field :case_name, id: :fixedasset_case_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :固定資産取得年月日%>
+    <%= form.text_field :acquisition_date, id: :fixedasset_acquisition_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :機種名%>
+    <%= form.text_field :modeltype_name, id: :fixedasset_modeltype_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :シリアル番号%>
+    <%= form.text_field :serial_number, id: :fixedasset_serial_number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :設置場所 %>
+    <%= form.text_field :place_summary, id: :fixedasset_place_summary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :設置場所詳細 %>
+    <%= form.text_field :place_detail, id: :fixedasset_place_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :備考 %>
+    <%= form.text_area :etc_content, id: :fixedasset_etc_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
+<% else %>
+    <h2>session error, please login</h2>  
+<% end %>

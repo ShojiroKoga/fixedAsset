@@ -1,0 +1,139 @@
+<% if logged_in? %>
+
+<% if params[:pdf] %>
+
+<table>
+  <thead>
+    <tr>
+      <th>作成日</th>
+      <th>固定資産番号(個別コード)</th>
+      <th>名称(識別案件名)</th>
+      <th>固定資産取得年月日</th>
+      <th>機種名</th>
+      <th>シリアル番号</th>
+      <th>設置場所</th>
+      <th>設置場所詳細</th>
+      <th>備考</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fixedassets.each do |fixedasset| %>
+      <tr>
+        <td><%= fixedasset.create_date %></td>
+        <td><%= fixedasset.asset_number %></td>
+        <td><%= fixedasset.case_name %></td>
+        <td><%= fixedasset.acquisition_date %></td>
+        <td><%= fixedasset.modeltype_name %></td>
+        <td><%= fixedasset.serial_number %></td>
+        <td><%= fixedasset.place_summary %></td>
+        <td><%= fixedasset.place_detail %></td>
+        <td><%= fixedasset.etc_content %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+
+
+
+<p id="notice"><%= notice %></p>
+
+
+
+<%# form_for の代わりに search_form_for を使うことで検索フォームを作成 %>
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :search, "全検索(備考以外)" %>
+  <%= f.search_field :create_date_or_asset_number_or_case_name_or_acquisition_date_or_modeltype_name_or_serial_number_or_place_summary_or_place_detail_cont %>
+  <br />
+
+  <%# 検索ボタン %>
+  <%= f.submit "検索"%>
+  
+  <%= f.submit "検索PDF" ,name:"pdf" %>
+  
+<% end %>  
+  
+<hr />
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>作成日</th>
+      <th>固定資産番号(個別コード)</th>
+      <th>名称(識別案件名)</th>
+      <th>固定資産取得年月日</th>
+      <th>機種名</th>
+      <th>シリアル番号</th>
+      <th>設置場所</th>
+      <th>設置場所詳細</th>
+      <th>備考</th>
+      <th colspan="3"></th>
+    </tr>
+    <tr>
+      <th><%= sort_link(@q, :create_date) %></th>
+      <th><%= sort_link(@q, :asset_number) %></th>
+      <th><%= sort_link(@q, :case_name) %></th>
+      <th><%= sort_link(@q, :acquisition_date) %></th>
+      <th><%= sort_link(@q, :modeltype_name) %></th>
+      <th><%= sort_link(@q, :serial_number) %></th>
+      <th><%= sort_link(@q, :place_summary) %></th>
+      <th><%= sort_link(@q, :place_detail) %></th>
+      <th><%= sort_link(@q, :etc_content) %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fixedassets.each do |fixedasset| %>
+      <tr>
+        <td><%= fixedasset.create_date %></td>
+        <td><%= fixedasset.asset_number %></td>
+        <td><%= fixedasset.case_name %></td>
+        <td><%= fixedasset.acquisition_date %></td>
+        <td><%= fixedasset.modeltype_name %></td>
+        <td><%= fixedasset.serial_number %></td>
+        <td><%= fixedasset.place_summary %></td>
+        <td><%= fixedasset.place_detail %></td>
+        <td><%= fixedasset.etc_content %></td>
+        <td><%= link_to 'Show', fixedasset %></td>
+        <td><%= link_to 'PDF', fixedasset_path(fixedasset, format: :pdf) %></td>
+        <td><%= link_to 'Edit', edit_fixedasset_path(fixedasset) %></td>
+        <td><%= link_to 'Destroy', fixedasset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<hr />
+<%= link_to '新規登録', new_fixedasset_path %>
+<br>
+
+<hr />
+
+<b>CSVインポート</b>
+
+<%= form_tag import_fixedassets_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "CSVインポート" %>
+<% end %>
+
+
+<hr />
+
+<b>
+<%= link_to "CSV出力", fixedassets_path(format: :csv) %>
+</b>
+
+<% end %>
+
+<% else %>
+    <h2>session error, please login</h2>  
+<% end %>

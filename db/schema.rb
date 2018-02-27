@@ -10,38 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180125061551) do
+ActiveRecord::Schema.define(version: 20180227021718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "blogs", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.text "image"
-    t.text "image_cache"
-  end
-
-  create_table "contacts", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.text "content"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "favorites", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "blog_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "feeds", force: :cascade do |t|
-    t.text "image"
+  create_table "fixedassets", force: :cascade do |t|
+    t.string "create_date"
+    t.string "asset_number"
+    t.string "case_name"
+    t.string "acquisition_date"
+    t.string "modeltype_name"
+    t.string "serial_number"
+    t.string "place_summary"
+    t.string "place_detail"
+    t.text "etc_content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,8 +35,6 @@ ActiveRecord::Schema.define(version: 20180125061551) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image"
-    t.text "image_cache"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
