@@ -66,6 +66,7 @@ gem 'safe_attributes'
 gem 'ransack'
 
 gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 gem 'pdfkit'
 gem 'wkhtmltopdf'
 

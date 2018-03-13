@@ -14,3 +14,14 @@
  *= require_tree .
  *= require_self
  */
+
+table {
+  text-align: center;
+}
+th {
+  color: #FF9800;/*文字色*/
+  background: #fff5e5;/*背景色*/	
+}
+tr:nth-child(even) {
+  background: #cdddf7;
+ }

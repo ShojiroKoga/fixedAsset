@@ -1,0 +1,22 @@
+table {
+  border-collapse: collapse;
+}
+
+table th, table td {
+  border: solid 1px black;
+  table-layout: fixed;
+  word-wrap: break-word;
+}
+
+.b {
+  background-color: #c9c9c9;
+  width: 100px;
+}
+
+.e {
+  width: 220px;
+}
+
+.br{
+      page-break-after: always; 
+}

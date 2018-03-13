@@ -11,13 +11,15 @@ class Fixedasset < ApplicationRecord
 
 
   def self.import(file)
-    CSV.foreach(file.path,encoding: 'BOM|UTF-8', headers: true) do |row|
+    CSV.foreach(file.path,encoding: "Shift_JIS:UTF-8", headers: true) do |row|
 
       product  = new
 
       product.attributes = row.to_hash.slice(*updatable_attributes)
       
-      product.save!
+      if product.save
+        product.save
+      end
     end
   end
 

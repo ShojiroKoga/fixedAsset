@@ -14,7 +14,6 @@ class FixedassetsController < ApplicationController
   if params[:pdf]
    render pdf: 'sample',
           encoding: 'UTF-8',
-          #layout: 'pdf.html',
           show_as_html: params[:debug].present?
   end
 
@@ -42,8 +41,6 @@ class FixedassetsController < ApplicationController
         format.pdf do
           render pdf: 'show',
                encoding: 'UTF-8',
-              # layouts: 'pdf_layouts.html',
-              # template: 'things/show',
                show_as_html: params[:debug].present?
         end
      end

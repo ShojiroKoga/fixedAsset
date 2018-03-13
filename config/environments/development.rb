@@ -54,7 +54,7 @@ Rails.application.configure do
   
 #  config.action_mailer.default_url_options = { host: 'https://heroku-test-app-skoga.c9users.io/' }
 
-  
+    config.assets.precompile += %w( pdf/pdf.css )
   
    ActionMailer::Base.delivery_method = :smtp
    ActionMailer::Base.smtp_settings =
