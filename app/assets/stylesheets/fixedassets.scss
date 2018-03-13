@@ -1,3 +1,14 @@
 // Place all the styles related to the Fixedassets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ 
+table {
+  text-align: center;
+}
+th {
+  color: #FF9800;/*文字色*/
+  background: #fff5e5;/*背景色*/	
+}
+tr:nth-child(even) {
+  background: #cdddf7;
+ }
