@@ -3,7 +3,7 @@ table {
 }
 
 table th, table td {
-  border: solid black;
+  border: solid 0.5px black;
   table-layout: fixed;
   word-wrap: break-word;
 }
