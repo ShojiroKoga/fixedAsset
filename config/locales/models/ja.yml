@@ -11,3 +11,12 @@ ja:
         email: メールアドレス
         salon_id: サロン
         password: パスワード
+      fixedasset:
+        create_date: 作成日
+        asset_number: 固定資産番号(個別コード)
+        case_name: 案件名
+        acquisition_date: 固定資産取得年月日
+        modeltype_name: 機種名
+        serial_number: シリアル番号
+        place_summary: 設置場所
+        place_detail: 設置場所詳細
