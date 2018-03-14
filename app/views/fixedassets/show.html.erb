@@ -2,56 +2,37 @@
 
 <table>
 <tr>
-<id="notice"><%= notice %>
-</tr>           
-
-<tr>
-  <strong>Create date:</strong>
-  <%= @fixedasset.create_date %>
+  <td class="b">作成日</td>
+  <td class="e"><%= @fixedasset.create_date %></td>
 </tr>
-
 <tr>
-  <strong>Asset number:</strong>
-  <%= @fixedasset.asset_number %>
+  <td class="b">固定資産番号</td>
+  <td class="e"><%= @fixedasset.asset_number %></td>
 </tr>
-
 <tr>
-  <strong>Case name:</strong>
-  <%= @fixedasset.case_name %>
+  <td class="b">取得日</td>
+  <td class="e"><%= @fixedasset.acquisition_date %></td>
 </tr>
-
-
 <tr>
-  <strong>Acquisition date:</strong>
-  <%= @fixedasset.acquisition_date %>
+  <td class="b">機種名</td>
+  <td class="e"><%= @fixedasset.modeltype_name %></td>
 </tr>
-
 <tr>
-  <strong>Modeltype name:</strong>
-  <%= @fixedasset.modeltype_name %>
+  <td class="b">シリアル</td>
+  <td class="e"><%= @fixedasset.serial_number %></td>
 </tr>
-
-
 <tr>
-  <strong>Serial number:</strong>
-  <%= @fixedasset.serial_number %>
+  <td class="b">場所</td>
+  <td class="e"><%= @fixedasset.place_summary %></td>
 </tr>
-
 <tr>
-  <strong>Place summary:</strong>
-  <%= @fixedasset.place_summary %>
-</tr>
-
-<tr>
-  <strong>Place detail:</strong>
-  <%= @fixedasset.place_detail %>
-</tr>
-
-<tr>
-  <strong>Etc content:</strong>
-  <%= @fixedasset.etc_content %>
+  <td class="b">詳細</td>
+  <td class="e"><%= @fixedasset.place_detail %></td>
 </tr>
 </table>
+<p class="s">
+  <%= @fixedasset.case_name %>
+</p>
 
 <%= link_to 'Edit', edit_fixedasset_path(@fixedasset) %> |
 <%= link_to 'Back', fixedassets_path %>
