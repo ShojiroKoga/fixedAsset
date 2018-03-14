@@ -103,10 +103,10 @@
         <td><%= fixedasset.place_summary %></td>
         <td><%= fixedasset.place_detail %></td>
         <td><%= fixedasset.etc_content %></td>
-        <td><%= link_to 'Show', fixedasset %></td>
+        <td><%= link_to '詳細', fixedasset %></td>
         <td><%= link_to 'PDF', fixedasset_path(fixedasset, format: :pdf) %></td>
-        <td><%= link_to 'Edit', edit_fixedasset_path(fixedasset) %></td>
-        <td><%= link_to 'Destroy', fixedasset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '編集', edit_fixedasset_path(fixedasset) %></td>
+        <td><%= link_to '削除', fixedasset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -136,5 +136,5 @@
 <% end %>
 
 <% else %>
-    <h2>session error, please login</h2>  
+    <h2>セッション異常です。ログインしてください。</h2>  
 <% end %>

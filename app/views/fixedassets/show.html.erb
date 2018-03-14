@@ -1,80 +1,62 @@
+<% if logged_in? %>
+
 <table>
 <tr>
-<p id="notice"><%= notice %></p>
+<id="notice"><%= notice %>
 </tr>           
 
 <tr>
-<p>
   <strong>Create date:</strong>
   <%= @fixedasset.create_date %>
-</p>
 </tr>
 
-
 <tr>
-<p>
   <strong>Asset number:</strong>
   <%= @fixedasset.asset_number %>
-</p>
 </tr>
 
-
 <tr>
-<p>
   <strong>Case name:</strong>
   <%= @fixedasset.case_name %>
-</p>
 </tr>
 
 
 <tr>
-<p>
   <strong>Acquisition date:</strong>
   <%= @fixedasset.acquisition_date %>
-</p>
 </tr>
 
-
 <tr>
-<p>
   <strong>Modeltype name:</strong>
   <%= @fixedasset.modeltype_name %>
-</p>
 </tr>
 
 
 <tr>
-<p>
   <strong>Serial number:</strong>
   <%= @fixedasset.serial_number %>
-</p>
 </tr>
 
-
 <tr>
-<p>
   <strong>Place summary:</strong>
   <%= @fixedasset.place_summary %>
-</p>
 </tr>
 
-
 <tr>
-<p>
   <strong>Place detail:</strong>
   <%= @fixedasset.place_detail %>
-</p>
 </tr>
-
 
 <tr>
-<p>
   <strong>Etc content:</strong>
   <%= @fixedasset.etc_content %>
-</p>
 </tr>
-
 </table>
 
 <%= link_to 'Edit', edit_fixedasset_path(@fixedasset) %> |
 <%= link_to 'Back', fixedassets_path %>
+
+
+<% else %>
+    <h2>セッション異常です。ログインしてください。</h2>  
+<% end %>
