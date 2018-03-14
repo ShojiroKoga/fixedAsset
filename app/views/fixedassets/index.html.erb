@@ -64,9 +64,9 @@
   <br />
 
   <%# 検索ボタン %>
-  <%= f.submit "検索"%>
+  <%= f.submit "検索", class: 'btn btn-default'%>
   
-  <%= f.submit "検索PDF" ,name:"pdf" %>
+  <%= f.submit "検索PDF" ,name:"pdf", class: 'btn btn-default' %>
   
 <% end %>  
   
@@ -114,24 +114,22 @@
 
 
 <hr />
-<%= link_to '新規登録', new_fixedasset_path %>
-<br>
+<%= link_to '新規登録', new_fixedasset_path, class: 'btn btn-default' %>
+
+
+<%= link_to "CSVエクスポート", fixedassets_path(format: :csv), class: 'btn btn-default' %>
+
 
 <hr />
 
-<b>CSVインポート</b>
 
 <%= form_tag import_fixedassets_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag "CSVインポート" %>
+  <%= file_field_tag :file  %>
+  <%= submit_tag "CSVインポート" , class: 'btn btn-default'%>
 <% end %>
 
 
-<hr />
 
-<b>
-<%= link_to "CSVエクスポート", fixedassets_path(format: :csv) %>
-</b>
 
 <% end %>
 

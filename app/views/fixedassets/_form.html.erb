@@ -3,7 +3,7 @@
 <%= form_with(model: fixedasset, local: true) do |form| %>
   <% if fixedasset.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(fixedasset.errors.count, "error") %> prohibited this fixedasset from being saved:</h2>
+      <h2><%= pluralize(fixedasset.errors.count, "箇所エラーがあります。") %> </h2>
 
       <ul>
       <% fixedasset.errors.full_messages.each do |message| %>
