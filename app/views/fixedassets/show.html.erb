@@ -7,6 +7,10 @@
   <td class="es"><%= @fixedasset.create_date %></td>
 </tr>
 <tr>
+  <td class="bs">案件名</td>
+  <td class="es"><%= @fixedasset.case_name %></td>
+</tr>
+<tr>
   <td class="bs">固定資産番号</td>
   <td class="es"><%= @fixedasset.asset_number %></td>
 </tr>
@@ -30,10 +34,11 @@
   <td class="bs">詳細</td>
   <td class="es"><%= @fixedasset.place_detail %></td>
 </tr>
+<tr>
+  <td class="bs">備考</td>
+  <td class="es"><%= @fixedasset.etc_content %></td>
+</tr>
 </table>
-<p class="s">
-  <%= @fixedasset.case_name %>
-</p>
 
 <%= link_to '編集', edit_fixedasset_path(@fixedasset) %> |
 <%= link_to '戻る', fixedassets_path %>

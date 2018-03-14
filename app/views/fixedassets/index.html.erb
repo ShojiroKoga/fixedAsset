@@ -86,7 +86,7 @@
       <th><%= sort_link(@q, :serial_number,"シリアル番号") %></th>
       <th><%= sort_link(@q, :place_summary,"設置場所") %></th>
       <th><%= sort_link(@q, :place_detail,"設置場所詳細") %></th>
-      <th><%= sort_link(@q, :etc_content,"備考") %></th>
+
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -102,7 +102,7 @@
         <td><%= fixedasset.serial_number %></td>
         <td><%= fixedasset.place_summary %></td>
         <td><%= fixedasset.place_detail %></td>
-        <td><%= fixedasset.etc_content %></td>
+
         <td><%= link_to '詳細', fixedasset %></td>
         <td><%= link_to 'PDF', fixedasset_path(fixedasset, format: :pdf) %></td>
         <td><%= link_to '編集', edit_fixedasset_path(fixedasset) %></td>
